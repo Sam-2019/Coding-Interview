@@ -6,6 +6,10 @@ import ListItem from "./ListItem";
 function List() {
   const dataList = useSelector(dataData);
 
+  if (dataList.length === 0) {
+    return <>No data</>;
+  }
+
   return (
     <>
       {dataList.map((item, index) => (
