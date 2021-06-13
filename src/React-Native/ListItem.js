@@ -11,10 +11,12 @@ function ListItem({ id, text }) {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>{text}</Text>
+    <View>
+      <View style={styles.container}>
+        <Text style={styles.textView}>{text}</Text>
 
-      <Button onClick={remove}>Delete</Button>
+        <Button style={styles.buttonView} title="Remove" onPress={remove} />
+      </View>
     </View>
   );
 }
@@ -23,6 +25,15 @@ export default ListItem;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "center"
+  },
+  textView: {
+    fontSize: 20,
+    marginRight: 10
+  },
+  buttonView: {
+    alignSelf: "flex-end"
   }
 });

@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { View, FlatList } from "react-native";
 import { dataData } from "../features/dataSlice";
 import { useSelector } from "react-redux";
 import ListItem from "./ListItem";
@@ -11,11 +11,15 @@ function List() {
     return <View>No data</View>;
   }
 
+  const renderItem = ({ item }) => <ListItem text={item.name} id={item.id} />;
+
   return (
     <View>
-      {dataList.map((item, index) => (
-        <ListItem key={index} text={item.name} id={item.id} />
-      ))}
+      <FlatList
+        data={dataList}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+      />
     </View>
   );
 }

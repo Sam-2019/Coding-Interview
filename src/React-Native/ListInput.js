@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TextInput, Button } from "react-native";
+import { View, TextInput, Button, StyleSheet } from "react-native";
 import { adddata } from "../features/dataSlice";
 import { useDispatch } from "react-redux";
 
@@ -21,16 +21,27 @@ function ListInput({ name, setName }) {
   }
 
   return (
-    <View>
+    <View style={styles.container}>
       <TextInput
-        name="asset"
+        style={styles.input}
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
-      <Button onPress={submit}> Submit </Button>
+      <Button title="Submit" onPress={submit} />
     </View>
   );
 }
 
 export default ListInput;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "column"
+  },
+  input: {
+    height: 40,
+    borderWidth: 1
+  }
+});
