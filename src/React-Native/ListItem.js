@@ -21,9 +21,8 @@ function ListItem({ id, text }) {
 
 export default ListItem;
 
-const styles = StyleSheet({
+const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: ""
+    flex: 1
   }
 });
