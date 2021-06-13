@@ -8,6 +8,7 @@ function App() {
   const dataList = useSelector(dataData);
 
   const [name, setName] = useState("");
+
   return (
     <>
       <ListInput name={name} setName={setName} />
