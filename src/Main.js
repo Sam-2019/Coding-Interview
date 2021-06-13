@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import List from "./List";
-import ListInput from "./ListInput";
+import List from "./MainApp/List";
+import ListInput from "./MainApp/ListInput";
 import { useSelector } from "react-redux";
-import { dataData } from "./features/dataSlice";
+import { dataData } from "./MainApp/features/dataSlice";
 
 function App() {
   const dataList = useSelector(dataData);

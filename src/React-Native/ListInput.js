@@ -1,5 +1,6 @@
 import React from "react";
-import { adddata } from "./features/dataSlice";
+import { View, TextInput, Button } from "react-native";
+import { adddata } from "../features/dataSlice";
 import { useDispatch } from "react-redux";
 
 function ListInput({ name, setName }) {
@@ -20,15 +21,15 @@ function ListInput({ name, setName }) {
   }
 
   return (
-    <div>
-      <input
+    <View>
+      <TextInput
         name="asset"
         value={name}
         onChange={(e) => setName(e.target.value)}
       />
 
-      <button onClick={submit}> Submit </button>
-    </div>
+      <Button onPress={submit}> Submit </Button>
+    </View>
   );
 }
 

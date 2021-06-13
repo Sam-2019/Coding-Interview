@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "./MainApp/Main";
+import Main from "./Main";
 import store from "./store";
 import { Provider } from "react-redux";
 
